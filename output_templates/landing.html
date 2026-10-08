@@ -1,0 +1,45 @@
+{% from "_partials.html" import head_assets, header, banner, footer with context %}
+{% from "_form.html" import lead_form with context %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ lp.page_title or campaign_name }}</title>
+  {% if lp.meta_description %}<meta name="description" content="{{ lp.meta_description }}">{% endif %}
+  {% if lp.manual_css %}<style>{{ lp.manual_css | safe }}</style>{% endif %}
+{{ head_assets() }}
+  {% for f in visual_fonts or [] %}<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ f | replace(' ', '+') }}:wght@400;600;700&display=swap">{% endfor %}
+  {% if visual_css %}<style>{{ visual_css }}</style>{% endif %}
+  {% if visual_body %}<script>document.documentElement.classList.add('lp-js');setTimeout(function(){if(!window.LP_FX)document.documentElement.classList.remove('lp-js')},2500);</script>{% endif %}
+</head>
+<body>
+{% if visual_body %}
+<div class="visual-body">{{ visual_body }}</div>
+{% else %}
+{{ header() }}
+
+{{ banner() }}
+
+<main class="container main-grid{{ ' form-left' if layout.form_position == 'left' }}">
+  <section class="content">
+    {% if not layout.hero_text %}
+    {% if lp.eyebrow %}<p class="eyebrow">{{ lp.eyebrow }}</p>{% endif %}
+    {% if lp.headline %}<h1>{{ lp.headline }}</h1>{% endif %}
+    {% if lp.subheadline %}<p class="subheadline">{{ lp.subheadline }}</p>{% endif %}
+    {% endif %}
+    <div class="rich">{{ lp.body | content }}</div>
+  </section>
+
+  {{ lead_form() }}
+</main>
+
+{{ footer() }}
+{% endif %}
+<script>window.LP_CONFIG = {{ js_config | tojson }};</script>
+<script src="assets/script.js"></script>
+{% if lp.manual_js %}<script>{{ lp.manual_js | safe }}</script>{% endif %}
+{% if visual_body %}<script src="assets/effects.js"></script>{% endif %}
+{% if visual_js %}<script>{{ visual_js }}</script>{% endif %}
+</body>
+</html>
