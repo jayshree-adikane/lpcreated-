@@ -11,17 +11,28 @@
   },
   "layout": {},
   "lp": {
-    "form_title": "Download the eBook",
-    "submit_text": "Download Now",
+    "form_title": "Enter your email address to unlock this Signature Collection",
+    "submit_text": "REGISTER TO UNLOCK",
     "fields": [
+      {
+        "label": "Email",
+        "name": "email",
+        "id": "f_email",
+        "type": "email",
+        "required": true,
+        "width": "full",
+        "placeholder": "Email",
+        "options": [],
+        "css_class": ""
+      },
       {
         "label": "First Name",
         "name": "first_name",
         "id": "f_first_name",
         "type": "text",
         "required": true,
-        "width": "half",
-        "placeholder": "",
+        "width": "full",
+        "placeholder": "First Name",
         "options": [],
         "css_class": ""
       },
@@ -31,41 +42,8 @@
         "id": "f_last_name",
         "type": "text",
         "required": true,
-        "width": "half",
-        "placeholder": "",
-        "options": [],
-        "css_class": ""
-      },
-      {
-        "label": "Business Email",
-        "name": "business_email",
-        "id": "f_business_email",
-        "type": "email",
-        "required": true,
         "width": "full",
-        "placeholder": "",
-        "options": [],
-        "css_class": ""
-      },
-      {
-        "label": "Phone Number",
-        "name": "phone_number",
-        "id": "f_phone_number",
-        "type": "tel",
-        "required": false,
-        "width": "half",
-        "placeholder": "",
-        "options": [],
-        "css_class": ""
-      },
-      {
-        "label": "Company Name",
-        "name": "company_name",
-        "id": "f_company_name",
-        "type": "text",
-        "required": true,
-        "width": "half",
-        "placeholder": "",
+        "placeholder": "Last Name",
         "options": [],
         "css_class": ""
       },
@@ -75,35 +53,37 @@
         "id": "f_job_title",
         "type": "text",
         "required": true,
-        "width": "half",
-        "placeholder": "",
+        "width": "full",
+        "placeholder": "Job Title",
         "options": [],
         "css_class": ""
       },
       {
-        "label": "Country",
-        "name": "country",
-        "id": "f_country",
-        "type": "select",
+        "label": "Company",
+        "name": "company",
+        "id": "f_company",
+        "type": "text",
         "required": true,
-        "width": "half",
-        "placeholder": "",
-        "options": [
-          "India",
-          "United States",
-          "United Kingdom",
-          "Canada",
-          "Australia",
-          "Singapore",
-          "United Arab Emirates",
-          "Germany",
-          "Other"
-        ],
+        "width": "full",
+        "placeholder": "Company",
+        "options": [],
+        "css_class": ""
+      },
+      {
+        "label": "Phone Number",
+        "name": "phone_number",
+        "id": "f_phone_number",
+        "type": "tel",
+        "required": true,
+        "width": "full",
+        "placeholder": "Phone Number",
+        "options": [],
         "css_class": ""
       }
     ],
-    "consent_text": "I agree to receive communications and accept the privacy policy.",
-    "consent_type": "checkbox"
+    "consent_text": "<p>I consent that Tata Consultancy Services can use my contact information for the purpose of sending me details about their products, services, and events. The processing of your data by TCS will be in accordance with the <a href=\"https://www.tcs.com/who-we-are/legal/tcs-privacy-notice\" target=\"_blank\">TCS Privacy Notice</a> and you can unsubscribe any time by following the guidelines in the Privacy Notice.</p><p>We will send this information to Tata Consultancy Services, subject to Arizent's <a href=\"https://www.arizent.com/\" target=\"_blank\">Privacy Policy.</a></p>",
+    "consent_type": "checkbox",
+    "form_intro": ""
   },
   "ty": {
     "heading": "Thank you!",
@@ -121,5 +101,5 @@
     "email": true
   },
   "created_at": "2026-10-08T11:02:55.653744+00:00",
-  "updated_at": "2026-10-08T11:02:55.653744+00:00"
+  "updated_at": "2026-10-09T10:12:34.461118+00:00"
 }
